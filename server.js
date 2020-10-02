@@ -14,3 +14,24 @@ let notesData = [];
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "Develop/public")));
+
+// routes
+
+// api call response for all the notes, and sends the results to the browser as an array of object
+
+app.get("/api/notes", function (err, res) {
+    try {
+        // reads the notes from json file
+        notesData = fs.readFileSync("Develop/db/db.json", "utf8");
+        console.log("hello!");
+        // parse it so notesData is an array of objects
+        notesData = JSON.parse(notesData);
+
+        // error handling
+    } catch (err) {
+        console.log("\n error (in app.get.catch):");
+        console.log(err);
+    }
+    //   send objects to the browser
+    res.json(notesData);
+});
