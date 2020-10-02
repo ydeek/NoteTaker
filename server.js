@@ -1,16 +1,17 @@
 // Require Dependencies
 const express = require("express");
-const fs = require("fs");
-const path = require('path');
+const bodyParser = require("body-parser")
 
 // Initialize express app
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Setup data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static(__dirname));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+app.use(express.static("public"));
 
 //Require routes file
 require('./routes/routes')(app);
