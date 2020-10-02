@@ -35,3 +35,10 @@ app.get("/api/notes", function (err, res) {
     //   send objects to the browser
     res.json(notesData);
 });
+
+// writes the new note to the json file
+app.post("/api/notes", function (req, res) {
+    try {
+        // reads the json file
+        notesData = fs.readFileSync("./Develop/db/db.json", "utf8");
+        console.log(notesData);
