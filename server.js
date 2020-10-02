@@ -95,3 +95,25 @@ app.delete("/api/notes/:id", function (req, res) {
         console.log(err);
     }
 });
+
+
+// HTML GET Requests
+
+// Web page when the Get started button is clicked
+app.get("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "Develop/public/notes.html"));
+});
+
+// If no matching route is found default to home
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "Develop/public/index.html"));
+});
+
+app.get("/api/notes", function (req, res) {
+    return res.sendFile(path.json(__dirname, "Develop/db/db.json"));
+});
+
+// Start the server on the port
+app.listen(PORT, function () {
+    console.log("SERVER IS LISTENING: " + PORT);
+});
