@@ -12,6 +12,15 @@ https://yazand-note-taker.herokuapp.com/
 <img src="public/assets/Screenshot_1.png" alt="">
 
 
+<img src="public/assets/Screenshot_2.png" alt="">
+
+
+<img src="public/assets/Screenshot_3.png" alt="">
+
+
+<img src="public/assets/Screenshot_4.png" alt="">
+
+
 
 # User Story
 
