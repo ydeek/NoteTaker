@@ -6,6 +6,13 @@ This application allows users to write, save, and delete notes. Express backend 
 
 https://yazand-note-taker.herokuapp.com/
 
+
+
+
+<img src="public/assets/Screenshot_1.png" alt="">
+
+
+
 # User Story
 
 AS A user, I want to be able to write and save notes
